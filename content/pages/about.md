@@ -5,7 +5,7 @@ slug: "sobre"
 layout: "single"
 image: "/uploads/site/valeria-rojas-artista.jpeg"
 image_alt: "Valeria Rojas junto a los canales de Venecia"
-intro: "Aprendo cerámica desde 2024."
+intro: "Mi camino en la cerámica."
 approach_title: "Sobre mí"
 sitemap:
   priority: "0.8"
