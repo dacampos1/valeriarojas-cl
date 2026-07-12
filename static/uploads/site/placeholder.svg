@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Imagen de referencia">
-  <rect width="1200" height="900" fill="#efe7dc"/>
-  <rect x="120" y="120" width="960" height="660" fill="#fffdf8" stroke="#ddd4c6" stroke-width="6"/>
-  <circle cx="600" cy="390" r="130" fill="#d9c9b8"/>
-  <path d="M360 650c120-110 210-150 300-118 74 26 108 98 180 84 42-8 80-39 120-86" fill="none" stroke="#8f4b38" stroke-width="24" stroke-linecap="round"/>
-  <text x="600" y="810" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" fill="#746d63">Reemplaza esta imagen desde el admin</text>
-</svg>
