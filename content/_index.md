@@ -1,6 +1,6 @@
 ---
 title: "Inicio"
-description: "Valeria Rojas comenzó a aprender cerámica en 2024. En este sitio comparte parte de ese proceso y algunas de sus piezas."
+description: "Empecé a aprender cerámica en 2024. En este sitio comparto un archivo personal de las piezas que he realizado desde entonces."
 hero_alt: "Valeria Rojas junto a los canales de Venecia"
 sitemap:
   priority: "1"
