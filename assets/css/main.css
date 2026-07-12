@@ -325,9 +325,9 @@ h3 { font-size: clamp(1.3rem, 2vw, 2rem); }
 
 .page-hero.split {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(260px, .7fr);
+  grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr);
   align-items: end;
-  gap: clamp(50px, 8vw, 130px);
+  gap: clamp(40px, 5vw, 80px);
   width: 100%;
   padding-top: 0;
 }
