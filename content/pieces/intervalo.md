@@ -1,9 +1,9 @@
 ---
-title: "Umbral I"
+title: "Intervalo"
 description: "Imagen referencial para visualizar la galería."
-date: 2026-06-06
-image: "/uploads/site/obra-ejemplo-01.webp"
-image_alt: "Composición abstracta en negro y óxido"
+date: 2026-06-02
+image: "/uploads/site/obra-ejemplo-05.webp"
+image_alt: "Composición vertical abstracta en negro y vino"
 gallery: []
 year: "Ejemplo"
 dimensions: ""

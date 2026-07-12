@@ -1,9 +1,9 @@
 ---
-title: "Umbral I"
+title: "Campo"
 description: "Imagen referencial para visualizar la galería."
-date: 2026-06-06
-image: "/uploads/site/obra-ejemplo-01.webp"
-image_alt: "Composición abstracta en negro y óxido"
+date: 2026-06-01
+image: "/uploads/site/obra-ejemplo-06.webp"
+image_alt: "Composición abstracta con bloque negro y círculo ocre"
 gallery: []
 year: "Ejemplo"
 dimensions: ""

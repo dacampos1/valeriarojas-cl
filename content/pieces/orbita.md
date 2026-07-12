@@ -1,9 +1,9 @@
 ---
-title: "Umbral I"
+title: "Órbita"
 description: "Imagen referencial para visualizar la galería."
-date: 2026-06-06
-image: "/uploads/site/obra-ejemplo-01.webp"
-image_alt: "Composición abstracta en negro y óxido"
+date: 2026-06-03
+image: "/uploads/site/obra-ejemplo-04.webp"
+image_alt: "Trazo circular abstracto en tinta negra"
 gallery: []
 year: "Ejemplo"
 dimensions: ""

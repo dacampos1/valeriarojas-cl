@@ -1,9 +1,9 @@
 ---
-title: "Umbral I"
+title: "Estructura ocre"
 description: "Imagen referencial para visualizar la galería."
-date: 2026-06-06
-image: "/uploads/site/obra-ejemplo-01.webp"
-image_alt: "Composición abstracta en negro y óxido"
+date: 2026-06-04
+image: "/uploads/site/obra-ejemplo-03.webp"
+image_alt: "Composición abstracta en grafito y ocre"
 gallery: []
 year: "Ejemplo"
 dimensions: ""
