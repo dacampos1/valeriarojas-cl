@@ -1,4 +1,4 @@
-<article class="text-page">
+<article class="text-page{{ with .Params.image }} has-image{{ end }}">
   <header class="page-hero split">
     <div>
       <p class="kicker">{{ .Params.kicker | default .Title }}</p>
