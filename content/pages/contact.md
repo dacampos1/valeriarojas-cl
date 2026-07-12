@@ -3,7 +3,8 @@ title: "Contacto"
 description: "Escríbeme para consultar por obras disponibles, exposiciones o colaboraciones."
 slug: "contacto"
 layout: "single"
-intro: "Conversemos sobre cerámica."
+kicker: "Escríbeme"
+intro: "Contáctame"
 sitemap:
   priority: 0.7
   changefreq: "monthly"

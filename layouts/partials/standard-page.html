@@ -1,7 +1,7 @@
 <article class="text-page">
   <header class="page-hero split">
     <div>
-      <p class="kicker">{{ .Title }}</p>
+      <p class="kicker">{{ .Params.kicker | default .Title }}</p>
       <h1>{{ .Params.intro | default .Title }}</h1>
     </div>
     {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}">{{ end }}
