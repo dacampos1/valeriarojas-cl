@@ -213,7 +213,7 @@ h3 { font-size: clamp(1.3rem, 2vw, 2rem); }
 }
 
 .hero-image img {
-  height: clamp(620px, 78svh, 820px);
+  height: clamp(680px, 84svh, 930px);
   object-position: center;
 }
 
