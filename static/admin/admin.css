@@ -130,7 +130,18 @@ h2 { font-size: 30px; }
 h3 { font-size: 20px; }
 
 .muted { color: var(--muted); }
-.notice { min-height: 24px; color: var(--ink); }
+.notice {
+  margin: 0 0 22px;
+  padding: 14px 16px;
+  border: 1px solid var(--ink);
+  background: var(--soft);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.notice[hidden] { display: none; }
+.notice.success { background: var(--ink); color: #fff; }
+.notice.error { border-style: double; border-width: 3px; background: #fff; }
 .hidden { display: none !important; }
 
 .button {

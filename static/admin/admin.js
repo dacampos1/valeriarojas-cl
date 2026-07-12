@@ -65,7 +65,7 @@
             </div>
             <div class="actions" id="top-actions"></div>
           </div>
-          <p id="message" class="notice"></p>
+          <p id="message" class="notice" role="status" aria-live="polite" hidden></p>
           <section id="content"></section>
         </main>
       </div>`;
@@ -78,6 +78,7 @@
         state.view = button.dataset.view;
         state.collection = null;
         state.entry = null;
+        setMessage("");
         renderCurrent();
       });
     });
@@ -87,6 +88,7 @@
         state.view = "collection";
         state.collection = getCollection(button.dataset.collection);
         state.entry = null;
+        setMessage("");
         renderCurrent();
       });
     });
@@ -140,12 +142,14 @@
     content().querySelectorAll("[data-edit]").forEach((button) => {
       button.addEventListener("click", () => {
         state.entry = prepareEntry(collection, entries[Number(button.dataset.edit)]);
+        setMessage("");
         renderEditor();
       });
     });
 
     app.querySelector("#new-entry")?.addEventListener("click", () => {
       state.entry = prepareNewEntry(collection);
+      setMessage("");
       renderEditor();
     });
   }
@@ -187,16 +191,23 @@
       renderCurrent();
     });
 
-    app.querySelector("#delete-entry")?.addEventListener("click", async () => {
-      if (!confirm("¿Eliminar esta entrada?")) return;
+    app.querySelector("#delete-entry")?.addEventListener("click", async (event) => {
+      const button = event.currentTarget;
+      const entryTitle = state.entry.data.title || "esta obra";
+      if (!confirm(`¿Eliminar “${entryTitle}”? Esta acción no se puede deshacer.`)) return;
       try {
-        setMessage("Eliminando...");
+        button.disabled = true;
+        button.textContent = "Eliminando...";
+        setMessage(`Eliminando “${entryTitle}”…`);
         await api("delete-piece", { method: "POST", body: JSON.stringify({ path: state.entry.path }) });
-        await refresh("Entrada eliminada. Los cambios pueden tardar unos minutos en aparecer.");
+        await loadData();
         state.entry = null;
         renderCurrent();
+        setMessage(`“${entryTitle}” fue eliminada correctamente. El cambio puede tardar unos minutos en aparecer en el sitio.`, "success");
       } catch (error) {
-        setMessage(`No se pudo eliminar: ${error.message}`);
+        button.disabled = false;
+        button.textContent = "Eliminar";
+        setMessage(`No se pudo eliminar “${entryTitle}”: ${error.message}`, "error");
       }
     });
 
@@ -211,7 +222,7 @@
         const data = readFields(fieldsFor(state.entry), form);
         await saveEntry(data);
       } catch (error) {
-        setMessage(`No se pudo guardar: ${error.message}`);
+          setMessage(`No se pudo guardar: ${error.message}`, "error");
         submit.disabled = false;
         submit.textContent = "Guardar";
       }
@@ -296,7 +307,7 @@
           await refresh("Archivo eliminado. Los cambios pueden tardar unos minutos en aparecer.");
           renderMedia();
         } catch (error) {
-          setMessage(`No se pudo eliminar el archivo: ${error.message}`);
+          setMessage(`No se pudo eliminar el archivo: ${error.message}`, "error");
         }
       });
     });
@@ -508,9 +519,12 @@
     app.querySelector("#top-actions").innerHTML = html;
   }
 
-  function setMessage(message) {
+  function setMessage(message, type = "info") {
     const element = app.querySelector("#message");
-    if (element) element.textContent = message;
+    if (!element) return;
+    element.textContent = message;
+    element.hidden = !message;
+    element.className = `notice ${type}`;
   }
 
   function content() {
