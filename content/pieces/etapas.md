@@ -2,7 +2,7 @@
 title: "Etapas"
 description: "Composición escultórica con figuras humanas y una forma vertical central."
 date: 2025-12-01
-image: "/uploads/site/etapas-main-1783899767273.jpg"
+image: "/uploads/site/etapas-main-1783899832244.jpg"
 image_position: "63% 78%"
 image_alt: "Escultura Etapas, vista principal"
 gallery:
