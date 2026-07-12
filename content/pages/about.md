@@ -16,6 +16,6 @@ Nací en Santiago en 1961 y estudié Ingeniería Civil Estructural en la Univers
 
 En 2024 comencé a asistir al Taller Huara Huara como alumna de Ruth Krauskopf.
 
-Me interesa especialmente la escultura. Actualmente exploro el cuerpo humano, en particular las cabezas, y trabajo en piezas de mayor tamaño.
+Me interesa especialmente la escultura. Actualmente exploro el cuerpo humano, en particular las cabezas, y estoy trabajando en piezas de mayor tamaño.
 
 Este sitio es un archivo personal de las piezas que he realizado durante este proceso.
