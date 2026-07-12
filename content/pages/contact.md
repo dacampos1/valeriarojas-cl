@@ -12,6 +12,6 @@ sitemap:
 Escríbeme para consultar por obras disponibles, exposiciones o colaboraciones. Responderé a la brevedad.
 
 <p class="contact-actions">
-  <a class="button primary" href="mailto:contacto@valeriarojas.cl">Enviar email</a>
+  <a class="button primary" href="mailto:contacto@valeriarojas.cl">Enviar correo</a>
   <a class="button" href="/obras/">Explorar obras</a>
 </p>

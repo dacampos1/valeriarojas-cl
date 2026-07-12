@@ -12,7 +12,7 @@ sitemap:
   changefreq: "monthly"
 ---
 
-Nací en Santiago en 1961 y estudié Ingeniería Civil Estructural en la Universidad de Chile. Después de retirarme retomé mi interés por la cerámica.
+Nací en Santiago en 1961 y estudié ingeniería civil estructural en la Universidad de Chile. Después de retirarme retomé mi interés por la cerámica.
 
 En 2024 comencé a asistir al Taller Huara Huara como alumna de Ruth Krauskopf.
 
