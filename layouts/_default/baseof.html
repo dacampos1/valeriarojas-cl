@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ site.LanguageCode | default "es-CL" }}">
+  <head>
+    {{ partial "seo.html" . }}
+    {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <main id="contenido">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>

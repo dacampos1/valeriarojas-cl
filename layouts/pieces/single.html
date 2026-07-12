@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{ $settings := site.Data.settings.global }}
+<article class="piece-detail">
+  <figure>
+    {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}">{{ end }}
+  </figure>
+  <div class="piece-info">
+    <p class="kicker">{{ partial "status-label.html" . }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="lede small">{{ .Params.description }}</p>
+    <dl class="meta-list">
+      {{ with .Params.year }}<div><dt>Año</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.dimensions }}<div><dt>Dimensiones</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.price }}<div><dt>Precio</dt><dd>{{ . }}</dd></div>{{ end }}
+    </dl>
+    <div class="prose">{{ .Content }}</div>
+    {{ $message := printf "Hola, quiero consultar por una obra similar a %s" .Title }}
+    {{ $contact := cond (ne $settings.whatsapp "") (printf "https://wa.me/%s?text=%s" $settings.whatsapp ($message | urlquery)) (printf "mailto:%s?subject=%s" $settings.email (.Title | urlquery)) }}
+    <a class="button primary" href="{{ $contact }}" target="_blank" rel="noopener">{{ $settings.piece_contact_label | default "Consultar obra similar" }}</a>
+  </div>
+</article>
+{{ with .Params.gallery }}
+<section class="piece-gallery" aria-label="Galería de {{ $.Title }}">
+  {{ range . }}
+    {{ $src := cond (reflect.IsMap .) .image . }}
+    {{ $alt := cond (reflect.IsMap .) (.alt | default $.Title) $.Title }}
+    {{ with $src }}<img src="{{ . }}" alt="{{ $alt }}">{{ end }}
+  {{ end }}
+</section>
+{{ end }}
+{{ end }}

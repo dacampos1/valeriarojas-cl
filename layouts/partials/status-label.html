@@ -1,0 +1,2 @@
+{{ $status := .Params.status | default "no disponible" }}
+{{ if eq $status "disponible" }}Disponible{{ else if eq $status "vendida" }}Vendida{{ else }}No disponible{{ end }}

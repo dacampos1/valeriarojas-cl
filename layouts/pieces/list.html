@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="page-hero compact">
+  <p class="kicker">Galería</p>
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Description | default "Galería editable de obras, proyectos o piezas." }}</p>
+</section>
+
+<section class="piece-grid gallery">
+  {{ range .Pages }}
+    {{ partial "piece-card.html" . }}
+  {{ end }}
+</section>
+{{ end }}

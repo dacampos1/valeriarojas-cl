@@ -1,0 +1,31 @@
+baseURL = "https://valeriarojas.cl/"
+languageCode = "es-CL"
+locale = "es-CL"
+title = "Valeria Rojas"
+enableRobotsTXT = true
+summaryLength = 24
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Sitio oficial de Valeria Rojas. Conoce su trayectoria y explora sus obras."
+  images = ["/uploads/site/placeholder.svg"]
+
+[permalinks]
+  pieces = "/obras/:slug/"
+  pages = "/:slug/"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[taxonomies]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.4

@@ -1,0 +1,10 @@
+<article class="piece-card">
+  <a href="{{ .RelPermalink }}" aria-label="Ver {{ .Title }}">
+    {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}">{{ end }}
+    <div class="piece-card-copy">
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Params.description }}</p>
+      <span>{{ partial "status-label.html" . }}</span>
+    </div>
+  </a>
+</article>

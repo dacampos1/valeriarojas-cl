@@ -1,0 +1,11 @@
+{{ $settings := site.Data.settings.global }}
+<footer class="site-footer">
+  <div>
+    <p class="footer-mark">{{ $settings.artist_name | default site.Title }}</p>
+    <p>{{ $settings.footer_note }}</p>
+  </div>
+  <div class="footer-links">
+    {{ with $settings.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+    {{ with $settings.instagram }}<a href="{{ . }}" rel="me noopener" target="_blank">Instagram</a>{{ end }}
+  </div>
+</footer>

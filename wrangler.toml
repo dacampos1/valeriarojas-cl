@@ -1,0 +1,17 @@
+name = "valeriarojas-cl"
+main = "src/worker.js"
+compatibility_date = "2026-07-08"
+
+[vars]
+# Set these in Cloudflare too. Local values are only placeholders.
+CF_ACCESS_TEAM_DOMAIN = "your-team.cloudflareaccess.com"
+CF_ACCESS_AUDS = "your-access-audience-tag"
+GITHUB_REPO = "dacampos1/valeriarojas-cl"
+
+[build]
+command = "hugo --gc --minify"
+
+[assets]
+binding = "ASSETS"
+directory = "./public"
+not_found_handling = "404-page"

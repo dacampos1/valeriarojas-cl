@@ -1,0 +1,16 @@
+{{ $settings := site.Data.settings.global }}
+<header class="site-header">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <nav class="nav" aria-label="Navegación principal">
+    <a class="brand" href="{{ "/" | relURL }}" aria-label="{{ $settings.site_name | default site.Title }}">
+      <span>{{ $settings.artist_name | default site.Title }}</span>
+      {{ with $settings.logo_image }}<img src="{{ . }}" alt="Logo de {{ $settings.site_name | default site.Title }}">{{ end }}
+      <small>artista</small>
+    </a>
+    <div class="nav-links">
+      <a href="{{ "/sobre/" | relURL }}">Sobre</a>
+      <a href="{{ "/obras/" | relURL }}">Obras</a>
+      <a href="{{ "/contacto/" | relURL }}">Contacto</a>
+    </div>
+  </nav>
+</header>
