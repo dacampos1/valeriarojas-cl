@@ -1,7 +1,7 @@
 ---
 title: "Inicio"
-description: "Sitio oficial de Valeria Rojas. Conoce su trayectoria y explora sus obras."
-hero_alt: "Obra de Valeria Rojas"
+description: "Valeria Rojas es ceramista. Conoce su práctica artística y explora una selección de obras en cerámica contemporánea."
+hero_alt: "Silueta en blanco y negro de Valeria Rojas, ceramista"
 sitemap:
   priority: "1"
   changefreq: "weekly"

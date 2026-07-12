@@ -7,8 +7,8 @@ summaryLength = 24
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  description = "Sitio oficial de Valeria Rojas. Conoce su trayectoria y explora sus obras."
-  images = ["/uploads/site/placeholder.svg"]
+  description = "Sitio oficial de Valeria Rojas, ceramista. Conoce su práctica artística y explora sus obras en cerámica contemporánea."
+  images = ["/uploads/site/retrato-artista-placeholder.webp"]
 
 [permalinks]
   pieces = "/obras/:slug/"

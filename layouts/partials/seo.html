@@ -1,5 +1,5 @@
 {{ $settings := site.Data.settings.global }}
-{{ $title := cond .IsHome ($settings.site_name | default site.Title) (printf "%s | %s" .Title ($settings.site_name | default site.Title)) }}
+{{ $title := cond .IsHome (printf "%s | Ceramista" ($settings.site_name | default site.Title)) (printf "%s | %s" .Title ($settings.site_name | default site.Title)) }}
 {{ $description := .Description | default .Params.description | default $settings.description | default site.Params.description }}
 {{ $image := .Params.image | default $settings.hero_image | default (index site.Params.images 0) }}
 {{ $imageAlt := .Params.image_alt | default $settings.artist_name | default site.Title }}
@@ -7,8 +7,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
-<meta name="robots" content="index, follow">
+<meta name="author" content="{{ $settings.artist_name | default site.Title }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="{{ .Permalink }}">
+<link rel="alternate" hreflang="es-CL" href="{{ .Permalink }}">
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
 <link rel="icon" href="{{ "/favicon.png" | relURL }}" type="image/png">
 <meta property="og:locale" content="es_CL">
 <meta property="og:site_name" content="{{ $settings.site_name | default site.Title }}">
@@ -27,12 +30,13 @@
 <script type="application/ld+json">
 {{ dict
   "@context" "https://schema.org"
-  "@type" "Organization"
+  "@type" "Person"
   "name" ($settings.artist_name | default site.Title)
+  "jobTitle" "Ceramista"
   "description" $description
   "url" site.BaseURL
   "image" ($settings.hero_image | absURL)
-  "sameAs" (slice $settings.instagram)
+  "sameAs" (cond (ne $settings.instagram "") (slice $settings.instagram) (slice))
   | jsonify
   | safeJS
 }}

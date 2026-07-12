@@ -1,17 +1,17 @@
 ---
 title: "Contacto"
-description: "Página de contacto editable."
+description: "Contacta a Valeria Rojas para consultas sobre obras, exposiciones, prensa y colaboraciones relacionadas con su trabajo en cerámica."
 slug: "contacto"
 layout: "single"
-intro: "Contacto"
+intro: "Conversemos sobre cerámica, obras y nuevas colaboraciones."
 sitemap:
   priority: 0.7
   changefreq: "monthly"
 ---
 
-Escribe para consultas, prensa, exposiciones o colaboraciones.
+Escribe para consultar por obras disponibles, propuestas de exposición, prensa o colaboraciones. Recibirás una respuesta a la brevedad.
 
 <p class="contact-actions">
   <a class="button primary" href="mailto:contacto@valeriarojas.cl">Enviar email</a>
-  <a class="button" href="/obras/">Ver galería</a>
+  <a class="button" href="/obras/">Explorar obras</a>
 </p>
