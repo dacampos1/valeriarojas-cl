@@ -4,7 +4,6 @@
   <div class="hero-copy">
     <p class="kicker">Artista</p>
     <h1>{{ $settings.artist_name }}</h1>
-    {{ with $settings.logo_image }}<img class="hero-logo" src="{{ . }}" alt="Logo de {{ $settings.site_name }}">{{ end }}
     <p class="lede">{{ $settings.tagline }}</p>
     <div class="actions">
       <a class="button primary" href="{{ "/obras/" | relURL }}">Ver galería</a>

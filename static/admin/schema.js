@@ -1,8 +1,8 @@
 window.ADMIN_SCHEMA = {
   brand: {
-    title: "Nombre del Sitio",
+    title: "Valeria Rojas",
     subtitle: "Administración",
-    logo: "/uploads/site/logo.svg",
+    logo: "/favicon.png",
   },
   collections: [
     {
@@ -17,7 +17,6 @@ window.ADMIN_SCHEMA = {
         { label: "Bajada principal", name: "tagline", widget: "text" },
         { label: "Descripción SEO", name: "description", widget: "text" },
         { label: "Imagen principal", name: "hero_image", widget: "image" },
-        { label: "Logo", name: "logo_image", widget: "image", required: false },
         { label: "Email", name: "email", widget: "string" },
         { label: "Instagram", name: "instagram", widget: "string", required: false },
         { label: "WhatsApp sin signos ni espacios", name: "whatsapp", widget: "string", required: false },
