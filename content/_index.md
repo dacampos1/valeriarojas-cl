@@ -1,6 +1,6 @@
 ---
 title: "Inicio"
-description: "Valeria Rojas es ceramista. Conoce su práctica artística y explora una selección de obras en cerámica contemporánea."
+description: "Valeria Rojas se inicia en la cerámica en 2024. Conoce su acercamiento a la cultura cerámica y una selección de sus obras."
 hero_alt: "Valeria Rojas junto a los canales de Venecia"
 sitemap:
   priority: "1"

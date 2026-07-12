@@ -7,8 +7,8 @@ summaryLength = 24
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  description = "Sitio oficial de Valeria Rojas, ceramista. Conoce su práctica artística y explora sus obras en cerámica contemporánea."
-  images = ["/uploads/site/retrato-artista-placeholder.webp"]
+  description = "Valeria Rojas se inicia en la cerámica en 2024. Conoce su acercamiento a la cultura cerámica y una selección de sus obras."
+  images = ["/uploads/site/valeria-rojas-artista.jpeg"]
 
 [permalinks]
   pieces = "/obras/:slug/"

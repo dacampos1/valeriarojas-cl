@@ -1,5 +1,5 @@
 {{ $settings := site.Data.settings.global }}
-{{ $title := cond .IsHome (printf "%s | Ceramista" ($settings.site_name | default site.Title)) (printf "%s | %s" .Title ($settings.site_name | default site.Title)) }}
+{{ $title := cond .IsHome (printf "%s | Cultura cerámica" ($settings.site_name | default site.Title)) (printf "%s | %s" .Title ($settings.site_name | default site.Title)) }}
 {{ $description := .Description | default .Params.description | default $settings.description | default site.Params.description }}
 {{ $image := .Params.image | default $settings.hero_image | default (index site.Params.images 0) }}
 {{ $imageAlt := .Params.image_alt | default $settings.artist_name | default site.Title }}
@@ -32,7 +32,7 @@
   "@context" "https://schema.org"
   "@type" "Person"
   "name" ($settings.artist_name | default site.Title)
-  "jobTitle" "Ceramista"
+  "jobTitle" "Ingeniera civil estructural"
   "description" $description
   "url" site.BaseURL
   "image" ($settings.hero_image | absURL)
