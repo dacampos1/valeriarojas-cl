@@ -7,11 +7,11 @@ summaryLength = 24
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  description = "Soy Valeria Rojas Mandiola. Este sitio reúne una selección de mis obras y procesos en escultura cerámica."
+  description = "Soy Valeria Rojas Mandiola. Este sitio reúne una selección de mis piezas y procesos en escultura cerámica."
   images = ["/uploads/site/valeria-rojas-artista.jpeg"]
 
 [permalinks]
-  pieces = "/obras/:slug/"
+  pieces = "/piezas/:slug/"
   pages = "/:slug/"
 
 [outputs]

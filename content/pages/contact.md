@@ -1,6 +1,6 @@
 ---
 title: "Contacto"
-description: "Escríbeme para consultar por obras disponibles, exposiciones o colaboraciones."
+description: "Escríbeme para consultar por piezas disponibles, exposiciones o colaboraciones."
 slug: "contacto"
 layout: "single"
 kicker: "Escríbeme"
@@ -10,9 +10,9 @@ sitemap:
   changefreq: "monthly"
 ---
 
-Escríbeme para consultar por obras disponibles, exposiciones o colaboraciones. Responderé a la brevedad.
+Escríbeme para consultar por piezas disponibles, exposiciones o colaboraciones. Responderé a la brevedad.
 
 <p class="contact-actions">
   <a class="button primary" href="mailto:contacto@valeriarojas.cl">Enviar correo</a>
-  <a class="button" href="/obras/">Explorar obras</a>
+  <a class="button" href="/piezas/">Explorar piezas</a>
 </p>

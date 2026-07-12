@@ -6,7 +6,7 @@
     <h1>{{ .Params.display_name | default $settings.artist_name }}</h1>
     <p class="lede">{{ $settings.tagline }}</p>
     <div class="actions">
-      <a class="button primary" href="{{ "/obras/" | relURL }}">Ver galería</a>
+      <a class="button primary" href="{{ "/piezas/" | relURL }}">Ver galería</a>
       <a class="button" href="{{ "/sobre/" | relURL }}">Conóceme</a>
     </div>
   </div>
@@ -16,14 +16,14 @@
 </section>
 
 <section class="intro-band">
-  <p>Este sitio reúne una selección de obras que he realizado.</p>
+  <p>Este sitio reúne una selección de piezas que he realizado.</p>
 </section>
 
 <section class="featured-section">
   <div class="section-heading">
     <p class="kicker">Piezas</p>
-    <h2>Obras recientes</h2>
-    <a href="{{ "/obras/" | relURL }}">Ver toda la galería</a>
+    <h2>Piezas recientes</h2>
+    <a href="{{ "/piezas/" | relURL }}">Ver toda la galería</a>
   </div>
   <div class="piece-grid">
     {{ range first 3 (where site.RegularPages "Section" "pieces") }}

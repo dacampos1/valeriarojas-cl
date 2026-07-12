@@ -10,8 +10,10 @@ dimensions: ""
 status: "no disponible"
 price: ""
 noindex: true
+aliases:
+  - "/obras/órbita/"
 sitemap:
   disable: true
 ---
 
-Contenido demostrativo. Reemplaza esta ficha y su imagen por una obra real desde el administrador.
+Contenido demostrativo. Reemplaza esta ficha y su imagen por una pieza real desde el administrador.

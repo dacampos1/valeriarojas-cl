@@ -14,9 +14,9 @@
       {{ with .Params.price }}<div><dt>Precio</dt><dd>{{ . }}</dd></div>{{ end }}
     </dl>
     <div class="prose">{{ .Content }}</div>
-    {{ $message := printf "Hola, quiero consultar por una obra similar a %s" .Title }}
+    {{ $message := printf "Hola, quiero consultar por una pieza similar a %s" .Title }}
     {{ $contact := cond (ne $settings.whatsapp "") (printf "https://wa.me/%s?text=%s" $settings.whatsapp ($message | urlquery)) (printf "mailto:%s?subject=%s" $settings.email (.Title | urlquery)) }}
-    <a class="button primary" href="{{ $contact }}" target="_blank" rel="noopener">{{ $settings.piece_contact_label | default "Consultar obra similar" }}</a>
+    <a class="button primary" href="{{ $contact }}" target="_blank" rel="noopener">{{ $settings.piece_contact_label | default "Consultar pieza similar" }}</a>
   </div>
 </article>
 {{ with .Params.gallery }}
