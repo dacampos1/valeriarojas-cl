@@ -48,7 +48,7 @@
         <aside>
           <div class="side-brand">
             <img src="${escAttr(schema.brand.logo)}" alt="">
-            <div><strong>${esc(schema.brand.title)}</strong><div class="muted">Admin</div></div>
+            <div><strong>${esc(schema.brand.title)}</strong><div class="muted">Administración</div></div>
           </div>
           <nav>
             <button class="nav-button" data-view="dashboard">Resumen</button>
