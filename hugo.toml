@@ -7,7 +7,7 @@ summaryLength = 24
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  description = "Valeria Rojas se inicia en la cerámica en 2024. Conoce su acercamiento a la cultura cerámica y una selección de sus obras."
+  description = "Valeria Rojas comenzó a aprender cerámica en 2024. En este sitio comparte parte de ese proceso y algunas de sus piezas."
   images = ["/uploads/site/valeria-rojas-artista.jpeg"]
 
 [permalinks]
