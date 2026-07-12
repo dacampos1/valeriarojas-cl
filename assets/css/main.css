@@ -123,7 +123,7 @@ a {
   min-height: auto;
   display: grid;
   grid-template-columns: minmax(0, .92fr) minmax(320px, 1.08fr);
-  align-items: center;
+  align-items: stretch;
   gap: 0;
 }
 
@@ -213,7 +213,7 @@ h3 { font-size: clamp(1.3rem, 2vw, 2rem); }
 }
 
 .hero-image img {
-  height: clamp(680px, 84svh, 930px);
+  height: 100%;
   object-position: center;
 }
 
@@ -465,6 +465,7 @@ dd { margin: 0; text-align: right; }
   }
 
   .hero-image img {
+    height: auto;
     min-height: 0;
     aspect-ratio: 4 / 5;
   }
