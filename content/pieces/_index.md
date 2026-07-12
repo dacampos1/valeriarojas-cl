@@ -1,6 +1,7 @@
 ---
 title: "Obras"
-description: "Aquí comparto una selección de mis piezas en cerámica, en las que trabajo con la forma, el volumen y la textura."
+description: "Aquí comparto una selección de mis obras de escultura cerámica, en las que trabajo con la forma, el volumen y la textura."
+lastmod: 2026-07-12
 url: "/obras/"
 aliases:
   - "/piezas/"

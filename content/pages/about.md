@@ -1,6 +1,7 @@
 ---
 title: "Sobre"
-description: "Después de retirarme retomé mi interés por la cerámica. Este sitio es un archivo personal de las piezas que he realizado."
+description: "Soy Valeria Rojas Mandiola. Después de retirarme retomé mi interés por la cerámica y actualmente trabajo en escultura."
+lastmod: 2026-07-12
 slug: "sobre"
 layout: "single"
 image: "/uploads/site/valeria-rojas-retrato-transparente.png"

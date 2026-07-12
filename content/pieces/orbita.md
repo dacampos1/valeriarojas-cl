@@ -9,6 +9,9 @@ year: "Ejemplo"
 dimensions: ""
 status: "no disponible"
 price: ""
+noindex: true
+sitemap:
+  disable: true
 ---
 
 Contenido demostrativo. Reemplaza esta ficha y su imagen por una obra real desde el administrador.

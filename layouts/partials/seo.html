@@ -1,20 +1,22 @@
 {{ $settings := site.Data.settings.global }}
-{{ $title := cond .IsHome (printf "%s | Escultura cerámica" ($settings.site_name | default site.Title)) (printf "%s | %s" .Title ($settings.site_name | default site.Title)) }}
+{{ $personName := site.Home.Params.display_name | default $settings.artist_name | default site.Title }}
+{{ $title := cond .IsHome (printf "%s | Escultura cerámica" $personName) (printf "%s | %s" .Title $personName) }}
 {{ $description := .Description | default .Params.description | default $settings.description | default site.Params.description }}
 {{ $image := .Params.image | default $settings.hero_image | default (index site.Params.images 0) }}
-{{ $imageAlt := .Params.image_alt | default $settings.artist_name | default site.Title }}
+{{ $imageAlt := .Params.image_alt | default .Params.hero_alt | default $personName }}
+{{ $robots := cond .Params.noindex "noindex, follow" "index, follow, max-image-preview:large" }}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
-<meta name="author" content="{{ $settings.artist_name | default site.Title }}">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="{{ $personName }}">
+<meta name="robots" content="{{ $robots }}">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="alternate" hreflang="es-CL" href="{{ .Permalink }}">
 <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
 <link rel="icon" href="{{ "/favicon.png" | relURL }}" type="image/png">
 <meta property="og:locale" content="es_CL">
-<meta property="og:site_name" content="{{ $settings.site_name | default site.Title }}">
+<meta property="og:site_name" content="{{ $personName }}">
 <meta property="og:title" content="{{ $title }}">
 <meta property="og:description" content="{{ $description }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
@@ -28,14 +30,51 @@
 {{ with $imageAlt }}<meta name="twitter:image:alt" content="{{ . }}">{{ end }}
 {{ if .IsHome }}
 <script type="application/ld+json">
-{{ dict
-  "@context" "https://schema.org"
+{{ $personID := printf "%s#valeria-rojas-mandiola" site.BaseURL }}
+{{ $person := dict
+  "@id" $personID
   "@type" "Person"
-  "name" ($settings.artist_name | default site.Title)
+  "name" $personName
+  "alternateName" "Valeria Rojas"
   "description" $description
-  "url" site.BaseURL
+  "url" ("/sobre/" | absURL)
   "image" ($settings.hero_image | absURL)
   "sameAs" (cond (ne $settings.instagram "") (slice $settings.instagram) (slice))
+  "birthPlace" (dict "@type" "Place" "name" "Santiago, Chile")
+  "alumniOf" (dict "@type" "CollegeOrUniversity" "name" "Universidad de Chile")
+  "knowsAbout" (slice "Escultura cerámica" "Cerámica" "Escultura figurativa")
+}}
+{{ $website := dict
+  "@id" (printf "%s#website" site.BaseURL)
+  "@type" "WebSite"
+  "name" (printf "%s — Escultura cerámica" $personName)
+  "url" site.BaseURL
+  "inLanguage" "es-CL"
+  "author" (dict "@id" $personID)
+}}
+{{ dict
+  "@context" "https://schema.org"
+  "@graph" (slice $person $website)
+  | jsonify
+  | safeJS
+}}
+</script>
+{{ else if eq .RelPermalink "/sobre/" }}
+<script type="application/ld+json">
+{{ dict
+  "@context" "https://schema.org"
+  "@type" "ProfilePage"
+  "name" $title
+  "url" .Permalink
+  "mainEntity" (dict
+    "@id" (printf "%s#valeria-rojas-mandiola" site.BaseURL)
+    "@type" "Person"
+    "name" $personName
+    "alternateName" "Valeria Rojas"
+    "description" $description
+    "image" ($image | absURL)
+    "sameAs" (cond (ne $settings.instagram "") (slice $settings.instagram) (slice))
+  )
   | jsonify
   | safeJS
 }}
