@@ -40,6 +40,7 @@ window.ADMIN_SCHEMA = {
         { label: "Descripción breve", name: "description", widget: "text" },
         { label: "Fecha", name: "date", widget: "date" },
         { label: "Imagen principal", name: "image", widget: "image" },
+        { label: "Encuadre principal", name: "image_position", widget: "hidden", default: "50% 50%" },
         { label: "Texto alternativo de imagen principal", name: "image_alt", widget: "string", required: false },
         {
           label: "Galería de imágenes",
@@ -48,6 +49,7 @@ window.ADMIN_SCHEMA = {
           required: false,
           fields: [
             { label: "Imagen", name: "image", widget: "image" },
+            { label: "Encuadre", name: "position", widget: "hidden", default: "50% 50%" },
             { label: "Texto alternativo", name: "alt", widget: "string", required: false },
           ],
         },

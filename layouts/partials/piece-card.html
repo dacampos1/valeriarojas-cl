@@ -1,6 +1,6 @@
 <article class="piece-card">
   <a href="{{ .RelPermalink }}" aria-label="Ver {{ .Title }}">
-    {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}">{{ end }}
+    {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" style="object-position: {{ $.Params.image_position | default "50% 50%" }}">{{ end }}
     <div class="piece-card-copy">
       <h3>{{ .Title }}</h3>
       <p>{{ .Params.description }}</p>

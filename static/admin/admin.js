@@ -334,12 +334,13 @@
     }
 
     if (field.widget === "image") {
+      const positionPath = path === "image" ? "image_position" : path.replace(/\.image$/, ".position");
       return `
-        <label>${esc(field.label)}
-          ${value ? `<img class="field-image-preview" src="${escAttr(previewSrc(value))}" alt="">` : ""}
+        <label class="image-field">${esc(field.label)}
+          ${value ? `<div class="field-image-frame" data-crop-frame data-position-for="${escAttr(positionPath)}"><img class="field-image-preview" src="${escAttr(previewSrc(value))}" alt=""></div>` : ""}
           <input name="${escAttr(path)}" value="${escAttr(value || "")}">
           <div class="actions"><input type="file" accept="image/*" data-upload-for="${escAttr(path)}"><button class="button secondary" type="button" data-upload-button="${escAttr(path)}">Preparar imagen</button></div>
-          <span class="field-hint">La imagen se publica junto con el botón Guardar.</span>
+          <span class="field-hint">Arrastra la vista previa para ajustar el encuadre. La imagen se publica al guardar.</span>
         </label>`;
     }
 
@@ -379,6 +380,7 @@
           const target = root.querySelector(`[name="${cssEscape(name)}"]`);
           target.value = url;
           updateImagePreview(target, url);
+          hydrateCropFrames(target.closest("label"));
           setMessage("Imagen lista como vista previa. Ahora aprieta Guardar para publicarla con los cambios.");
         } catch (error) {
           setMessage(`No se pudo preparar la imagen: ${error.message}`);
@@ -400,6 +402,37 @@
     root.querySelectorAll("[data-remove-list-item]").forEach((button) => {
       button.addEventListener("click", () => button.closest("[data-list-entry]").remove());
     });
+    hydrateCropFrames(root);
+  }
+
+  function hydrateCropFrames(root) {
+    root.querySelectorAll("[data-crop-frame]:not([data-crop-ready])").forEach((frame) => {
+      frame.dataset.cropReady = "true";
+      const positionInput = content().querySelector(`[name="${cssEscape(frame.dataset.positionFor)}"]`);
+      let [x, y] = parsePosition(positionInput?.value);
+      const paint = () => {
+        frame.querySelector("img").style.objectPosition = `${x}% ${y}%`;
+        if (positionInput) positionInput.value = `${Math.round(x)}% ${Math.round(y)}%`;
+      };
+      paint();
+      frame.addEventListener("pointerdown", (event) => {
+        frame.setPointerCapture(event.pointerId);
+        const move = (pointer) => {
+          const rect = frame.getBoundingClientRect();
+          x = Math.max(0, Math.min(100, ((pointer.clientX - rect.left) / rect.width) * 100));
+          y = Math.max(0, Math.min(100, ((pointer.clientY - rect.top) / rect.height) * 100));
+          paint();
+        };
+        move(event);
+        frame.addEventListener("pointermove", move);
+        frame.addEventListener("pointerup", () => frame.removeEventListener("pointermove", move), { once: true });
+      });
+    });
+  }
+
+  function parsePosition(value) {
+    const match = String(value || "50% 50%").match(/([\d.]+)%\s+([\d.]+)%/);
+    return match ? [Number(match[1]), Number(match[2])] : [50, 50];
   }
 
   function readFields(fields, form) {
@@ -542,7 +575,8 @@
       preview.src = previewSrc(url);
       return;
     }
-    input.insertAdjacentHTML("beforebegin", `<img class="field-image-preview" src="${escAttr(previewSrc(url))}" alt="">`);
+    const positionPath = input.name === "image" ? "image_position" : input.name.replace(/\.image$/, ".position");
+    input.insertAdjacentHTML("beforebegin", `<div class="field-image-frame" data-crop-frame data-position-for="${escAttr(positionPath)}"><img class="field-image-preview" src="${escAttr(previewSrc(url))}" alt=""></div>`);
   }
 
   function previewSrc(url) {

@@ -2,7 +2,7 @@
 {{ $settings := site.Data.settings.global }}
 <article class="piece-detail">
   <figure>
-    {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}">{{ end }}
+    {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" style="object-position: {{ $.Params.image_position | default "50% 50%" }}">{{ end }}
   </figure>
   <div class="piece-info">
     <p class="kicker">{{ partial "status-label.html" . }}</p>
@@ -24,8 +24,15 @@
   {{ range . }}
     {{ $src := cond (reflect.IsMap .) .image . }}
     {{ $alt := cond (reflect.IsMap .) (.alt | default $.Title) $.Title }}
-    {{ with $src }}<img src="{{ . }}" alt="{{ $alt }}">{{ end }}
+    {{ $position := cond (reflect.IsMap .) (.position | default "50% 50%") "50% 50%" }}
+    {{ with $src }}<button class="gallery-image" type="button" data-lightbox-src="{{ . }}" data-lightbox-alt="{{ $alt }}"><img src="{{ . }}" alt="{{ $alt }}" style="object-position: {{ $position }}"></button>{{ end }}
   {{ end }}
 </section>
 {{ end }}
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+  <button class="lightbox-close" type="button" aria-label="Cerrar visor">×</button>
+  <button class="lightbox-prev" type="button" aria-label="Imagen anterior">←</button>
+  <figure><img src="" alt=""><figcaption></figcaption></figure>
+  <button class="lightbox-next" type="button" aria-label="Imagen siguiente">→</button>
+</div>
 {{ end }}
