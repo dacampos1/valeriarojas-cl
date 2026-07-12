@@ -1,6 +1,6 @@
 ---
 title: "Sobre"
-description: "Empecé a aprender cerámica en 2024. Este sitio es un archivo personal de las piezas que he realizado desde entonces."
+description: "Después de retirarme retomé mi interés por la cerámica. Este sitio es un archivo personal de las piezas que he realizado."
 slug: "sobre"
 layout: "single"
 image: "/uploads/site/valeria-rojas-artista.jpeg"
@@ -12,10 +12,10 @@ sitemap:
   changefreq: "monthly"
 ---
 
-Nací en Santiago en 1961 y estudié Ingeniería Civil Estructural en la Universidad de Chile. Actualmente estoy retirada.
+Nací en Santiago en 1961 y estudié Ingeniería Civil Estructural en la Universidad de Chile. Después de retirarme retomé mi interés por la cerámica.
 
-En 2024 empecé a aprender cerámica como alumna del Taller Huara Huara, bajo la guía de Ruth Krauskopf.
+En 2024 comencé a asistir al Taller Huara Huara como alumna de Ruth Krauskopf.
 
-Actualmente exploro el cuerpo humano, especialmente las cabezas, y trabajo en esculturas de mayor tamaño.
+Me interesa especialmente la escultura. Actualmente exploro el cuerpo humano, en particular las cabezas, y trabajo en piezas de mayor tamaño.
 
 Este sitio es un archivo personal de las piezas que he realizado durante este proceso.
