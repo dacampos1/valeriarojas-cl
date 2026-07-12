@@ -242,7 +242,7 @@ async function deleteMedia(env, payload) {
   const usedAssets = await collectUsedAssets(env);
   if (usedAssets.has(asset)) throw err("Ese archivo está en uso. Sácalo primero de la obra, página o ajuste donde aparece.", 409);
 
-  const file = await ghGet(env, path);
+  const file = await ghGetMetadata(env, path);
   await ghDelete(env, path, file.sha, `Admin: eliminar archivo ${asset}`);
   return { ok: true, deletedAsset: asset };
 }
@@ -263,6 +263,11 @@ async function upload(env, payload) {
 async function ghGet(env, path) {
   const data = await gh(env, `/contents/${path}?ref=${BRANCH}`);
   return { sha: data.sha, content: decodeBase64(data.content || "") };
+}
+
+async function ghGetMetadata(env, path) {
+  const data = await gh(env, `/contents/${path}?ref=${BRANCH}`);
+  return { sha: data.sha };
 }
 
 async function ghList(env, path) {
@@ -356,7 +361,7 @@ async function deleteUnusedAssets(env, candidates, excludePath) {
 
     const path = `static${asset}`;
     try {
-      const file = await ghGet(env, path);
+      const file = await ghGetMetadata(env, path);
       await ghDelete(env, path, file.sha, `Admin: eliminar imagen ${asset}`);
       deletedAssets.push(asset);
     } catch (error) {
