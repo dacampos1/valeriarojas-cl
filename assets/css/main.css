@@ -120,7 +120,8 @@ a {
 .nav-links a:hover { text-decoration: underline; }
 
 .hero {
-  min-height: auto;
+  height: calc(100svh - var(--header));
+  min-height: 620px;
   display: grid;
   grid-template-columns: minmax(0, .92fr) minmax(320px, 1.08fr);
   align-items: stretch;
@@ -452,7 +453,10 @@ dd { margin: 0; text-align: right; }
   .page-hero.split,
   .piece-detail { grid-template-columns: 1fr; }
 
-  .hero { min-height: auto; }
+  .hero {
+    height: auto;
+    min-height: auto;
+  }
 
   .hero-copy {
     padding: 70px 0;
