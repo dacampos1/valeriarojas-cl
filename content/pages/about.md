@@ -6,7 +6,7 @@ slug: "sobre"
 layout: "single"
 image: "/uploads/site/valeria-rojas-retrato-transparente.png"
 image_alt: "Retrato de Valeria Rojas sobre fondo gris"
-intro: "Mi camino en la cerámica."
+intro: "Mis inicios en cerámica de gres."
 approach_title: "Sobre mí"
 sitemap:
   priority: "0.8"
