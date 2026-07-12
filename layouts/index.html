@@ -3,7 +3,7 @@
 <section class="hero">
   <div class="hero-copy">
     <p class="kicker">Escultura cerámica</p>
-    <h1>{{ $settings.artist_name }}</h1>
+    <h1>{{ .Params.display_name | default $settings.artist_name }}</h1>
     <p class="lede">{{ $settings.tagline }}</p>
     <div class="actions">
       <a class="button primary" href="{{ "/obras/" | relURL }}">Ver galería</a>
