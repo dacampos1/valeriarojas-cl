@@ -1,6 +1,6 @@
 ---
 title: "Obras"
-description: "Explora una selección de obras de Valeria Rojas: piezas de cerámica contemporánea que investigan la materia, la forma, el volumen y la textura."
+description: "Aquí comparto una selección de mis piezas en cerámica, en las que trabajo con la forma, el volumen y la textura."
 url: "/obras/"
 aliases:
   - "/piezas/"
