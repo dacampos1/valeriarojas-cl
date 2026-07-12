@@ -3,7 +3,7 @@ title: "Contacto"
 description: "Contacta a Valeria Rojas para consultas sobre obras, exposiciones, prensa y colaboraciones relacionadas con su trabajo en cerámica."
 slug: "contacto"
 layout: "single"
-intro: "Conversemos sobre cerámica, obras y nuevas colaboraciones."
+intro: "Conversemos sobre cerámica."
 sitemap:
   priority: 0.7
   changefreq: "monthly"
