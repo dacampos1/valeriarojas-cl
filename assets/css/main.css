@@ -240,7 +240,7 @@ h3 { font-size: clamp(1.3rem, 2vw, 2rem); }
 .text-page,
 .listing { padding: clamp(70px, 9vw, 140px) 0; }
 
-.text-page { padding-top: clamp(40px, 5vw, 72px); }
+.text-page { padding-top: 0; }
 
 .section-heading {
   display: flex;
