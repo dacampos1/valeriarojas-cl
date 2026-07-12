@@ -4,8 +4,8 @@ compatibility_date = "2026-07-08"
 
 [vars]
 # Set these in Cloudflare too. Local values are only placeholders.
-CF_ACCESS_TEAM_DOMAIN = "your-team.cloudflareaccess.com"
-CF_ACCESS_AUDS = "your-access-audience-tag"
+CF_ACCESS_TEAM_DOMAIN = "diegoc-dev.cloudflareaccess.com"
+CF_ACCESS_AUDS = "a9d7c8764185d92edcbb4212747b0c58134d12a4d432b3740ca02d48ac410196"
 GITHUB_REPO = "dacampos1/valeriarojas-cl"
 
 [build]
