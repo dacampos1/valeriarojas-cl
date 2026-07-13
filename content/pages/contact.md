@@ -10,7 +10,9 @@ sitemap:
   changefreq: "monthly"
 ---
 
-Escríbeme para consultar por piezas disponibles, exposiciones o colaboraciones. Responderé a la brevedad.
+Mi contacto en caso de consultas es
+<a href="mailto:contacto@valeriarojas.cl">contacto@valeriarojas.cl</a>.
+También puedes escribirme por piezas disponibles, exposiciones o colaboraciones.
 
 <p class="contact-actions">
   <a class="button primary" href="mailto:contacto@valeriarojas.cl">Enviar correo</a>
