@@ -117,7 +117,7 @@
         <div class="card"><h2>${state.data.media.length}</h2><p class="muted">Archivos en medios</p></div>
         <div class="card span-2">
           <h3>Modo mantenimiento</h3>
-          <p class="muted">${maintenanceMode ? "El sitio público está oculto por completo." : "El sitio público está visible."}</p>
+          <p class="muted">${maintenanceMode ? "El sitio público está mostrando la página de mantenimiento." : "El sitio público está visible."}</p>
           <button class="button ${maintenanceMode ? "accent" : "danger"}" id="toggle-maintenance">
             ${maintenanceMode ? "Volver a mostrar el sitio" : "Dejar sitio en mantenimiento"}
           </button>
@@ -127,7 +127,7 @@
 
     app.querySelector("#toggle-maintenance").addEventListener("click", async (event) => {
       const nextMode = !maintenanceMode;
-      if (nextMode && !confirm("¿Dejar el sitio en mantenimiento? El contenido público quedará completamente oculto hasta que vuelvas a mostrarlo desde aquí.")) return;
+      if (nextMode && !confirm("¿Dejar el sitio en mantenimiento? El contenido público será reemplazado por un aviso hasta que vuelvas a mostrarlo desde aquí.")) return;
 
       const button = event.currentTarget;
       try {
@@ -145,7 +145,7 @@
         await loadData();
         renderDashboard();
         setMessage(nextMode
-          ? "Modo mantenimiento activado. El sitio quedará oculto cuando termine el despliegue."
+          ? "Modo mantenimiento activado. El aviso aparecerá cuando termine el despliegue."
           : "Modo mantenimiento desactivado. El sitio volverá a mostrarse cuando termine el despliegue.", "success");
       } catch (error) {
         button.disabled = false;
