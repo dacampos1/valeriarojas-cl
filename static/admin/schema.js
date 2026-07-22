@@ -12,6 +12,7 @@ window.ADMIN_SCHEMA = {
       dataKey: "settings",
       path: "data/settings/global.yml",
       fields: [
+        { label: "Sitio en mantenimiento", name: "maintenance_mode", widget: "boolean", default: false },
         { label: "Nombre del sitio", name: "site_name", widget: "string" },
         { label: "Nombre del artista", name: "artist_name", widget: "string" },
         { label: "Bajada principal", name: "tagline", widget: "text" },

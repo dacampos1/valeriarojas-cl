@@ -107,6 +107,7 @@
   }
 
   function renderDashboard() {
+    const maintenanceMode = state.data.settings.values.maintenance_mode === true;
     setTitle("Resumen");
     setActions(`<a class="button secondary" href="/" target="_blank" rel="noopener">Ver sitio</a>`);
     content().innerHTML = `
@@ -114,8 +115,44 @@
         <div class="card"><h2>${state.data.pieces.length}</h2><p class="muted">Obras cargadas</p></div>
         <div class="card"><h2>${state.data.pages.length}</h2><p class="muted">Páginas editables</p></div>
         <div class="card"><h2>${state.data.media.length}</h2><p class="muted">Archivos en medios</p></div>
+        <div class="card span-2">
+          <h3>Modo mantenimiento</h3>
+          <p class="muted">${maintenanceMode ? "El sitio público está oculto por completo." : "El sitio público está visible."}</p>
+          <button class="button ${maintenanceMode ? "accent" : "danger"}" id="toggle-maintenance">
+            ${maintenanceMode ? "Volver a mostrar el sitio" : "Dejar sitio en mantenimiento"}
+          </button>
+        </div>
         <div class="card span-2"><h3>Publicación</h3><p class="muted">Los cambios pueden tardar unos minutos en aparecer en el sitio.</p></div>
       </div>`;
+
+    app.querySelector("#toggle-maintenance").addEventListener("click", async (event) => {
+      const nextMode = !maintenanceMode;
+      if (nextMode && !confirm("¿Dejar el sitio en mantenimiento? El contenido público quedará completamente oculto hasta que vuelvas a mostrarlo desde aquí.")) return;
+
+      const button = event.currentTarget;
+      try {
+        button.disabled = true;
+        button.textContent = nextMode ? "Ocultando sitio..." : "Mostrando sitio...";
+        setMessage("Guardando el cambio en GitHub...");
+        await api("save", {
+          method: "POST",
+          body: JSON.stringify({
+            path: state.data.settings.path,
+            sha: state.data.settings.sha,
+            values: { ...state.data.settings.values, maintenance_mode: nextMode },
+          }),
+        });
+        await loadData();
+        renderDashboard();
+        setMessage(nextMode
+          ? "Modo mantenimiento activado. El sitio quedará oculto cuando termine el despliegue."
+          : "Modo mantenimiento desactivado. El sitio volverá a mostrarse cuando termine el despliegue.", "success");
+      } catch (error) {
+        button.disabled = false;
+        button.textContent = maintenanceMode ? "Volver a mostrar el sitio" : "Dejar sitio en mantenimiento";
+        setMessage(`No se pudo cambiar el modo mantenimiento: ${error.message}`, "error");
+      }
+    });
   }
 
   function renderCollection() {

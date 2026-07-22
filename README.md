@@ -115,6 +115,10 @@ static/admin/schema.js
 
 Ahí se definen colecciones, campos, labels, páginas editables y el logo del admin.
 
+Desde el resumen del admin se puede activar el modo mantenimiento. Al activarlo,
+todo el sitio público queda en blanco después del despliegue, pero `/admin/`
+permanece disponible para desactivarlo.
+
 ## Personalización
 
 - Cambia colores y layout en `assets/css/main.css`.
